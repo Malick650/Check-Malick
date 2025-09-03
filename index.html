@@ -1126,6 +1126,103 @@
                 font-size: 2.5rem;
             }
         }
+
+        /* Animation wow pour le bouton Découvrir la démo */
+        #demo-btn {
+            animation: wowButton 1.5s infinite alternate ease-in-out;
+            position: relative;
+        }
+
+        #demo-btn::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 60px;
+            box-shadow: 0 0 20px 5px var(--gold);
+            opacity: 0;
+            animation: glowPulse 2s infinite;
+        }
+
+        @keyframes wowButton {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 6px 18px rgba(255, 215, 0, 0.3);
+            }
+            100% {
+                transform: scale(1.1) translateY(-3px);
+                box-shadow: 0 15px 30px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        @keyframes glowPulse {
+            0% { opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { opacity: 0; }
+        }
+
+        /* Carousel pour les certifications */
+        .certifications-section {
+            padding: 6rem 5%;
+            background-color: var(--section-bg);
+            border-radius: 30px;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        .carousel-prev:hover, .carousel-next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
     </style>
 </head>
 <body>
@@ -1316,6 +1413,35 @@
             </ul>
             <p>Avec un accompagnement dédié, des sessions Q&R et des projets pratiques, transformez votre passion en carrière. Inscrivez-vous dès maintenant pour un avenir digital brillant !</p>
             <a href="#contact" class="btn btn-light">S'inscrire à la formation</a>
+        </div>
+    </section>
+
+    <!-- Nouvelle Section Certifications avec Carousel -->
+    <section id="certifications" class="certifications-section section">
+        <h2 class="section-title">Mes Certifications</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="certification1.png" alt="Certification IA générative et création de contenu">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification2.png" alt="Certification Prompt engineering pour la génération de contenu avec l'IA">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification3.png" alt="Certification Astuces de productivité IA pour booster votre travail et votre carrière">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification4.png" alt="Certification PowerPoint et Microsoft 365 Copilot : Du prompt à la présentation">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification5.png" alt="Certification Copilot dans Excel : l'analyse de données avec l'IA">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification6.png" alt="Certification de Réussite PRINCIPES FONDAMENTAUX DE L'INTELLIGENCE ARTIFICIELLE">
+                </div>
+            </div>
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
@@ -1561,6 +1687,26 @@
             }
             
             setInterval(createParticle, 300);
+
+            // Carousel functionality
+            const carouselInner = document.querySelector('.carousel-inner');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                if (index >= carouselItems.length) index = 0;
+                if (index < 0) index = carouselItems.length - 1;
+                carouselInner.style.transform = `translateX(-${index * 100}%)`;
+                currentIndex = index;
+            }
+
+            prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+            nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+            // Auto slide every 5 seconds
+            setInterval(() => showSlide(currentIndex + 1), 5000);
         });
     </script>
 </body>
