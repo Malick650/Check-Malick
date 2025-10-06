@@ -325,6 +325,67 @@
             line-height: 1.8;
         }
         
+        /* Certifications Section */
+        .certifications-section {
+            padding: 6rem 5%;
+            background-color: var(--section-bg);
+            border-radius: 30px;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        .carousel-prev:hover, .carousel-next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
         /* Skills Section améliorée */
         .skills-intro {
             text-align: center;
@@ -1166,67 +1227,6 @@
             50% { opacity: 0.5; }
             100% { opacity: 0; }
         }
-
-        /* Carousel pour les certifications */
-        .certifications-section {
-            padding: 6rem 5%;
-            background-color: var(--section-bg);
-            border-radius: 30px;
-        }
-
-        .carousel {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .carousel-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .carousel-prev, .carousel-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 1rem;
-            cursor: pointer;
-            font-size: 1.5rem;
-            border-radius: 50%;
-            transition: background 0.3s;
-        }
-
-        .carousel-prev {
-            left: 10px;
-        }
-
-        .carousel-next {
-            right: 10px;
-        }
-
-        .carousel-prev:hover, .carousel-next:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
     </style>
 </head>
 <body>
@@ -1235,6 +1235,7 @@
         <div class="logo">Check Malick</div>
         <div class="nav-links">
             <a href="#about">À propos</a>
+            <a href="#certifications">Certifications</a>
             <a href="#skills">Compétences</a>
             <a href="#services">Prestations</a>
             <a href="#formation">Formation</a>
@@ -1264,7 +1265,7 @@
         
         <div class="profile-section">
             <div class="about-text">
-                <h3>Check Malick- Créateur de solutions digitales</h3>
+                <h3>Check Malick - Créateur de solutions digitales</h3>
                 <p>Développeur fullstack passionné, je m'épanouis dans la création d'expériences web innovantes. Actuellement en formation en réseaux et télécommunications, je combine expertise technique et vision stratégique pour concevoir des solutions qui marquent les esprits.</p>
                 <p>Mon approche du développement est centrée sur l'utilisateur, avec une attention particulière portée à l'expérience, aux performances et à l'accessibilité. Je m'engage à livrer des produits non seulement fonctionnels mais aussi esthétiques et intuitifs.</p>
                 <p>Mon projet phare, <strong>ConnectPlus</strong>, est une plateforme complète de gestion et monétisation de réseaux WiFi, démontrant ma capacité à relever des défis techniques complexes et à livrer des produits d'exception.</p>
@@ -1273,6 +1274,35 @@
                 <!-- Remplacez par votre photo -->
                 <img src="votre-photo.jpg" alt="Check Malick"> 
             </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section section">
+        <h2 class="section-title">Mes Certifications</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="certification1.png" alt="Certification IA générative et création de contenu">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification2.png" alt="Certification Prompt engineering pour la génération de contenu avec l'IA">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification3.png" alt="Certification Astuces de productivité IA pour booster votre travail et votre carrière">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification4.png" alt="Certification PowerPoint et Microsoft 365 Copilot : Du prompt à la présentation">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification5.png" alt="Certification Copilot dans Excel : l'analyse de données avec l'IA">
+                </div>
+                <div class="carousel-item">
+                    <img src="certification6.png" alt="Certification de Réussite PRINCIPES FONDAMENTAUX DE L'INTELLIGENCE ARTIFICIELLE">
+                </div>
+            </div>
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
@@ -1291,7 +1321,7 @@
                 <div class="progress-bar">
                     <div class="progress" data-width="95"></div>
                 </div>
-                <p class="skill-description">Maîtrise des standards web, design responsive, animations CSS avancées . Création d'interfaces utilisateur attrayantes et intuitives.</p>
+                <p class="skill-description">Maîtrise des standards web, design responsive, animations CSS avancées. Création d'interfaces utilisateur attrayantes et intuitives.</p>
             </div>
             
             <div class="skill">
@@ -1313,7 +1343,7 @@
                 <div class="progress-bar">
                     <div class="progress" data-width="85"></div>
                 </div>
-                <p class="skill-description">Développement back-end robuste, création d'APIs RESTful, architecture MVC et intégration avec bases de données. </p>
+                <p class="skill-description">Développement back-end robuste, création d'APIs RESTful, architecture MVC et intégration avec bases de données.</p>
             </div>
             
             <div class="skill">
@@ -1416,36 +1446,7 @@
                 <li>Intégration de l'IA : Techniques pour combiner l'intelligence artificielle à la programmation, automatiser les tâches répétitives et vous concentrer sur les vraies solutions innovantes.</li>
             </ul>
             <p>Avec un accompagnement dédié, des sessions Q&R et des projets pratiques, transformez votre passion en carrière. Inscrivez-vous dès maintenant pour un avenir digital brillant !</p>
-            <a href="https://khhnvvgj.mychariow.shop/prd_3dsfz" class="btn btn-light">S'inscrire à la formation</a>
-        </div>
-    </section>
-
-    <!-- Nouvelle Section Certifications avec Carousel -->
-    <section id="certifications" class="certifications-section section">
-        <h2 class="section-title">Mes Certifications</h2>
-        <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <img src="certification1.png" alt="Certification IA générative et création de contenu">
-                </div>
-                <div class="carousel-item">
-                    <img src="certification2.png" alt="Certification Prompt engineering pour la génération de contenu avec l'IA">
-                </div>
-                <div class="carousel-item">
-                    <img src="certification3.png" alt="Certification Astuces de productivité IA pour booster votre travail et votre carrière">
-                </div>
-                <div class="carousel-item">
-                    <img src="certification4.png" alt="Certification PowerPoint et Microsoft 365 Copilot : Du prompt à la présentation">
-                </div>
-                <div class="carousel-item">
-                    <img src="certification5.png" alt="Certification Copilot dans Excel : l'analyse de données avec l'IA">
-                </div>
-                <div class="carousel-item">
-                    <img src="certification6.png" alt="Certification de Réussite PRINCIPES FONDAMENTAUX DE L'INTELLIGENCE ARTIFICIELLE">
-                </div>
-            </div>
-            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+            <a href="https://khhnvvgj.mychariow.shop/prd_3dsfz5" class="btn btn-light">S'inscrire à la formation</a>
         </div>
     </section>
 
@@ -1720,11 +1721,21 @@
                 
                 closeRestaurantModal.addEventListener('click', function() {
                     restaurantDemoModal.style.display = 'none';
+                    // Pause the video when closing the modal
+                    const iframe = restaurantDemoModal.querySelector('iframe');
+                    if (iframe) {
+                        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                    }
                 });
                 
                 restaurantDemoModal.addEventListener('click', function(e) {
                     if (e.target === restaurantDemoModal) {
                         restaurantDemoModal.style.display = 'none';
+                        // Pause the video when clicking outside the modal
+                        const iframe = restaurantDemoModal.querySelector('iframe');
+                        if (iframe) {
+                            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                        }
                     }
                 });
             }
